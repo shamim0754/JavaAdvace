@@ -1,10 +1,7 @@
 ### Warmup ###
 1. create maven java project by following command 
-
 `mvn archetype:generate -DgroupId=com.javaaround -DartifactId=SpringBatch -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false`
-
 2. Update AppTest.java
-
 ```java
 package com.javaaround;
 
@@ -24,7 +21,6 @@ public class AppTest {
 }
 
 ```
-
 3. Update junit version at pom.xml
 
 ```xml
