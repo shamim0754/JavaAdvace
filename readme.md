@@ -33,7 +33,7 @@
 
 	`mvn clean package`
 
-### Anonymous Class ###	
+### Anonymous Class  ###	
 
 A class that have no name is known as anonymous class in java.it enable to making an instance of an object with certain "extras" such as overloading methods, without creating to actually subclass a class. Before creating anonymous class there must be `parent class` or `interace`.
 <br/>
@@ -68,7 +68,7 @@ A class that have no name is known as anonymous class in java.it enable to makin
         };
     System.out.println( "sum=" + adder.add(2,3));
 	```	
-	
+
 3. Run app 
 
 	`mvn clean package`	
