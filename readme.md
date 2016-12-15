@@ -35,6 +35,6 @@
 
 ### Anonymous Class ##	
 
-A class that have no name is known as anonymous inner class in java.it enable you to declare and instantiate a class at the same time.
+A class that have no name is known as anonymous class in java.it enable you to declare and instantiate a class at the same time. Before creating anonymous class there must be `parent class` or `interace`.
 <br/>
 <b>Usecase : </b> Use them if you need to use a local class only once.
