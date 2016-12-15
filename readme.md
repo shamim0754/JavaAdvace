@@ -32,3 +32,9 @@
 4. Run app by following command
 
 	`mvn clean package`
+
+### Anonymous Class ##	
+
+A class that have no name is known as anonymous inner class in java.it enable you to declare and instantiate a class at the same time.
+<br/>
+<b>Usecase : </b> Use them if you need to use a local class only once.
