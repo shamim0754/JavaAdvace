@@ -30,4 +30,5 @@
 	```
 
 4. Run app by following command
+
 	`mvn clean package`
