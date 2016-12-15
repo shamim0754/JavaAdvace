@@ -39,7 +39,7 @@ A class that have no name is known as anonymous class in java.it enable to makin
 <br/>
 <b>Usecase : </b> Use them if you need to use a local class only once.
 
-1. Example
+1. Usage in java sewing
 
 	```java
 	button.addActionListener(new ActionListener() {
@@ -49,3 +49,26 @@ A class that have no name is known as anonymous class in java.it enable to makin
 	    }
 	});
 	```
+1. create Adder.java
+
+	```java
+	package com.javaaround;
+	interface Adder{
+	   public int add(int num1,int num2);
+	}
+	```	
+
+2. Update App.java
+
+	```java
+	 Adder adder = new Adder(){
+        	 public int add(int num1,int num2) {
+        	 	return num1 + num2;
+        	 }
+        };
+    System.out.println( "sum=" + adder.add(2,3));
+	```	
+	
+3. Run app 
+
+	`mvn clean package`	
