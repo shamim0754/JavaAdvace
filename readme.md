@@ -40,6 +40,7 @@ A class that have no name is known as anonymous class in java.it enable to makin
 <b>Usecase : </b> Use them if you need to use a local class only once.
 
 1. Example
+
 	```java
 	button.addActionListener(new ActionListener() {
 	    @Override
