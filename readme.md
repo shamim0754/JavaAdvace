@@ -222,3 +222,16 @@ A class that have no name is known as anonymous class in java.it enable to makin
 3. Run app 
 
 	`mvn clean package`	
+
+### Generics  Benefits ###
+
+1. Generics add stability to your code by making more of your bugs detectable at compile time.Without generic bugs are arise at runtime that more problematic to fixing.
+2. Elimination of casts
+```java
+List<String> list = new ArrayList<String>();
+list.add("hello");
+//String s = (String)list.get(0); //without generic need cast
+String s = list.get(0); // no cast
+```
+3. Enabling programmers to implement generic algorithms.
+
