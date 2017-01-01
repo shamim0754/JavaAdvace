@@ -58,6 +58,38 @@ class OuterClass {
     }
 }
 ```
+
+### static nested class ###
+A static class i.e. created inside a class is called static nested class in java. since it is static it can only access static thing
+
+```java
+
+package com.javaaround;
+
+public class Outer {
+    static int data=30;
+    static class Inner{
+        public void print() {
+            System.out.println("static inner class" + data);
+        }
+    }
+
+}
+```
+App.java
+
+```java
+public class App 
+{
+    public static void main( String[] args )
+    {
+        System.out.println( "Hello World!" );
+        
+        Outer.Inner inner = new Outer.Inner();
+        inner.print();
+    }
+}
+```
 ### Inner Class ###
 Inner classes are class within Class,Unlike a class, an inner class can be private,protected
 
