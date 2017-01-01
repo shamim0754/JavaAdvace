@@ -62,9 +62,10 @@ class OuterClass {
 Inner classes are class within Class,Unlike a class, an inner class can be private,protected
 
 ```java
+package com.javaaround;
 public class Outer {
-
-    private class Inner{
+	//if private you can't outside
+    public class Inner{
         public void print() {
             System.out.println("This is an inner class");
         }
@@ -79,6 +80,30 @@ outer.class
 inner$outer.class
 ```
 Note : We can’t directly execute the inner class’s .class file with java command.
+
+### How to access Inner Class ###
+1. Within outer class . update Outer.java
+
+```java
+//access in outer
+    void display_Inner() {
+      Inner inner = new Inner();
+      inner.print();
+    }  
+```
+1. Outside outer class . update App.java
+
+```java
+System.out.println( "Hello World!" );
+// Instantiating the outer class 
+Outer outer = new Outer();
+
+// Accessing the display_Inner() method.
+outer.display_inner();
+
+Outer.Inner inner = outer.new Inner();
+inner.print();
+```
 
 ### Anonymous Class ###
 

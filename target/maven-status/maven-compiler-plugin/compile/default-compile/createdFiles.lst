@@ -1,5 +1,4 @@
-com\javaaround\App$1.class
-Outer$Inner.class
-Outer.class
+com\javaaround\Outer$Inner.class
+com\javaaround\Outer.class
 com\javaaround\App.class
 com\javaaround\Adder.class
