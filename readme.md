@@ -39,8 +39,9 @@ The Java programming language allows you to define a class within another class.
 
 ### Why Use Nested Classes ###
 
-1. It is a way of logically grouping classes that are only used in one place
-2. It increases encapsulation
+1. If a class is usefull to only one class, it makes sense to keep it nested and together.
+2. It increases encapsulation.inner classes can access outer class private members and at the same time we can hide inner class from outer world.
+
 3. It can lead to more readable and maintainable code
 
 ### Categories Nested Class ###
