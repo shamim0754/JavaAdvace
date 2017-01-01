@@ -59,6 +59,26 @@ class OuterClass {
 }
 ```
 ### Inner Class ###
+Inner classes are class within Class,Unlike a class, an inner class can be private,protected
+
+```java
+public class Outer {
+
+    private class Inner{
+        public void print() {
+            System.out.println("This is an inner class");
+        }
+    }
+
+}
+```
+If you compile above code it will produce two class file.
+
+```java
+outer.class
+inner$outer.class
+```
+Note : We can’t directly execute the inner class’s .class file with java command.
 
 ### Anonymous Class ###
 
