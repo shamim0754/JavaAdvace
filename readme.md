@@ -45,6 +45,20 @@ The Java programming language allows you to define a class within another class.
 
 ### Categories Nested Class ###
 
+![Image of Nested](images/inner_classes.jpg)
+
+```java
+class OuterClass {
+    ...
+    static class StaticNestedClass {
+        ...
+    }
+    class InnerClass {
+        ...
+    }
+}
+```
+
 ### Anonymous Class ###
 
 A class that have no name is known as anonymous class in java.it enable to making an instance of an object with certain "extras" such as overloading methods, without creating to actually subclass a class. Before creating anonymous class there must be `parent class` or `interace`.
