@@ -1,7 +1,7 @@
 ### Warmup ###
 1. create maven java project by following command
 
-	`mvn archetype:generate -DgroupId=com.javaaround -DartifactId=SpringBatch -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false`
+	`mvn archetype:generate -DgroupId=com.javaaround -DartifactId=JavaAdvance -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false`
 
 2. Update AppTest.java
 	```java
