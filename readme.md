@@ -33,6 +33,17 @@
 
 	`mvn clean package`
 
+### Nested Class ###
+
+The Java programming language allows you to define a class within another class. Such a class is called a nested class
+
+### Why Use Nested Classes ###
+
+1. It is a way of logically grouping classes that are only used in one place
+2. It increases encapsulation
+3. It can lead to more readable and maintainable code
+
+### Categories Nested Class ###
 
 ### Anonymous Class ###
 
