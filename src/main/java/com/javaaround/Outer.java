@@ -2,11 +2,15 @@
 package com.javaaround;
 
 public class Outer {
-    static int data=30;
-    static class Inner{
-        public void print() {
-            System.out.println("static inner class" + data);
-        }
-    }
+    int count=10;
+    public void display(){
+        class Inner {        
+            public void show(){
+             System.out.println("Inside inner "+count);
+            } 
+       }
 
+       Inner in=new Inner();
+       in.show();
+    }
 }

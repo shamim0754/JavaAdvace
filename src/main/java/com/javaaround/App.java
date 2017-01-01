@@ -10,7 +10,7 @@ public class App
     {
         System.out.println( "Hello World!" );
         
-        Outer.Inner inner = new Outer.Inner();
-        inner.print();
+        Outer outer = new Outer();
+        outer.display();
     }
 }

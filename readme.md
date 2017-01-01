@@ -91,7 +91,7 @@ public class App
 }
 ```
 ### Inner Class ###
-Inner classes are class within Class,Unlike a class, an inner class can be private,protected
+Inner classes are class within Class,Unlike a class, an inner class can be private,protected since it is  treated like member of the outer class
 
 ```java
 package com.javaaround;
@@ -108,8 +108,8 @@ public class Outer {
 If you compile above code it will produce two class file.
 
 ```java
-outer.class
-inner$outer.class
+Outer.class
+Inner$Outer.class
 ```
 Note : We can’t directly execute the inner class’s .class file with java command.
 
@@ -135,6 +135,51 @@ outer.display_inner();
 
 Outer.Inner inner = outer.new Inner();
 inner.print();
+```
+
+###  Method Local Inner Class ###
+When an inner class is defined inside the method of Outer Class it becomes Method local inner class.
+
+Method local inner class can be only instantiated within the method 
+
+```java
+
+package com.javaaround;
+
+public class Outer {
+    int count=10;
+    public void display(){
+        class Inner {        
+            public void show(){
+             System.out.println("Inside inner "+count);
+            } 
+       }
+
+       Inner in=new Inner();
+       in.show();
+    }
+}
+```
+App.java
+
+```java
+package com.javaaround;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+        System.out.println( "Hello World!" );
+        
+        Outer outer = new Outer();
+        outer.display();
+    }
+}
+
 ```
 
 ### Anonymous Class ###
