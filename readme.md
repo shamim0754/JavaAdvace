@@ -325,9 +325,11 @@ String s = (String) list.get(0);//typecasting
 
 After generics
 ```java
+
 List<String> list = new ArrayList<String>();  
 list.add("hello");  
-String s = list.get(0);   
+String s = list.get(0);  
+
 ```
 
 ### Java 7 Type Inference ### 
@@ -335,4 +337,4 @@ String s = list.get(0);
 
  `List<String> strings = new ArrayList<>();`
 
- Notice that generic type of the ArrayList has been left out. Instead is only the <> written. This is also sometimes referred to as the diamond operator
+ Notice that generic type of the ArrayList has been left out. Instead is only the <> written. This is also sometimes referred to as the `diamond operator`
