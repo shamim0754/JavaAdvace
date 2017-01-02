@@ -260,7 +260,7 @@ Integer s = (Integer)box.get();
 System.out.println(s);
 ```
 
-compile the class
+compile time error happens
 
 `mvn clean compile`
 
