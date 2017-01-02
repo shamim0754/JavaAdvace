@@ -281,7 +281,7 @@ public class Box<T> {
     }
 }
 ```
-Now compile time error
+Now compile time error happens if type mismatch
 ```java
 Box box<Integer> = new Box<Integer>();
 box.set("shamim"); //compile time error
@@ -333,7 +333,8 @@ String s = list.get(0);
 ```
 
 ### Java 7 Type Inference ### 
- From Java 7 the Java compiler can infer the type of the collection instantiated from the variable the collection is assigned to
+
+From Java 7 the Java compiler can infer the type of the collection instantiated from the variable the collection is assigned to
 
  `List<String> strings = new ArrayList<>();`
 
