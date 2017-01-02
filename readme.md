@@ -265,7 +265,7 @@ compile the class
 `mvn clean compile`
 
 ### Using Generics ###
-A class that can refer to any type is known as generic class.  generic class is delimited by angle brackets (<>), follows the class name.  Here, we are using T type parameter to create the generic class of specific type.
+A class that can refer to any type is known as generic class.  generic class is delimited by angle brackets (<>), follows the class name.  Here, we are using T `type parameter` to create the generic class of specific type. Generics introduced in at java 5
 
 
 ```java
@@ -302,3 +302,37 @@ System.out.println(box.get());
 compile the class
 
 `mvn clean compile`
+
+### Type Parameters naming conventions ###
+The type parameters naming conventions are important to learn generics thoroughly. The commonly type parameters are as follows:
+
+1. T - Type
+2. E - Element
+3. K - Key
+4. N - Number
+5. V - Value
+6. S,U,V etc. - 2nd, 3rd, 4th types
+
+### Apply Generics ###
+In java, collections framework allow to write now generics style code.
+
+Before generics
+```java
+List list = new ArrayList();  
+list.add("hello");  
+String s = (String) list.get(0);//typecasting  
+```
+
+After generics
+```java
+List<String> list = new ArrayList<String>();  
+list.add("hello");  
+String s = list.get(0);   
+```
+
+### Java 7 Type Inference ### 
+ From Java 7 the Java compiler can infer the type of the collection instantiated from the variable the collection is assigned to
+
+ `List<String> strings = new ArrayList<>();`
+
+ Notice that generic type of the ArrayList has been left out. Instead is only the <> written. This is also sometimes referred to as the diamond operator
