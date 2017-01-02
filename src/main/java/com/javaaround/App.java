@@ -10,7 +10,8 @@ public class App
     {
         System.out.println( "Hello World!" );
         
-        Outer outer = new Outer();
-        outer.display();
+        Box<Integer> box = new Box<Integer>();
+        box.set(new Integer(12)); //compile time error
+        System.out.println(box.get());
     }
 }

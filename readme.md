@@ -235,3 +235,70 @@ String s = list.get(0); // no cast
 ```
 3. Enabling programmers to implement generic algorithms.
 
+### Before Generics ###
+```java
+package com.javaaround;
+public class Box {
+    private Object object;
+
+    public void set(Object object) { 
+        this.object = object; 
+    }
+    public Object get() { 
+        return object; 
+    }
+}
+```
+any object can pass but using generics you can inforce to specific time
+
+update App.java
+
+```java
+Box box = new Box();
+box.set(new Integer(10)); 
+Integer s = (Integer)box.get();
+System.out.println(s);
+```
+
+compile the class
+
+`mvn clean compile`
+
+### Using Generics ###
+A class that can refer to any type is known as generic class.  generic class is delimited by angle brackets (<>), follows the class name.  Here, we are using T type parameter to create the generic class of specific type.
+
+
+```java
+package com.javaaround;
+public class Box<T> {
+    private T t;
+
+    public void set(T t) { 
+        this.t = t; 
+    }
+    public T get() { 
+        return t; 
+    }
+}
+```
+Now compile time error
+```java
+Box box<Integer> = new Box<Integer>();
+box.set("shamim"); //compile time error
+System.out.println(box.get());
+```
+
+compile the class
+
+`mvn clean compile`
+
+need to pass param only Integer
+
+```java
+Box<Integer> box = new Box<Integer>();
+box.set(new Integer(12)); //no error now
+System.out.println(box.get());
+```        
+compile the class
+
+`mvn clean compile`
