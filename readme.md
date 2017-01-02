@@ -249,7 +249,7 @@ public class Box {
     }
 }
 ```
-any object can pass but using generics you can inforce to specific time
+any object can pass but using generics you can inforce to specific type
 
 update App.java
 
@@ -260,7 +260,7 @@ Integer s = (Integer)box.get();
 System.out.println(s);
 ```
 
-compile time error happens
+compile the class
 
 `mvn clean compile`
 
