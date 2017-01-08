@@ -1,5 +1,5 @@
 package com.javaaround;
-public class Box<? extends Number> {
+public class Box<T extends Number> {
     private T t;
 
     public void set(T t) { 

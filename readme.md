@@ -341,6 +341,9 @@ public class Box<T> {
     }
 }
 ```
+
+we can use subType also `Box<T extends Number>`
+
 Now compile time error happens if type mismatch
 ```java
 Box box<Integer> = new Box<Integer>();
@@ -438,3 +441,51 @@ Update App.jva
  ### Wildcard  ###
 
  The ? (Wildcard) symbol represents wildcard element. It means any type. If we write <? extends Number>, it means any child class of Number e.g. Integer, Float, double etc
+
+ Shape.java
+ ```java
+package com.javaaround;
+
+import java.util.*;  
+abstract class Shape{  
+    abstract void draw();  
+}  
+ ```
+
+ Rectangle.java
+ ```java
+package com.javaaround;
+class Rectangle extends Shape{  
+    void draw(){
+        System.out.println("drawing rectangle");
+    }  
+} 
+ ```
+
+ Update App.java
+
+ ```java
+package com.javaaround;
+import java.util.*;
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void drawShapes(List<? extends Shape> lists){  
+      for(Shape s:lists){  
+          s.draw();
+      }  
+    }  
+    public static void main( String[] args )
+    {
+        
+       System.out.println( "Hello World!" );
+       List<Rectangle> list1=new ArrayList<Rectangle>();  
+       list1.add(new Rectangle());
+       drawShapes(list1);    
+    }
+}
+
+ ```

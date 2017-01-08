@@ -1,17 +1,22 @@
 package com.javaaround;
-
+import java.util.*;
 /**
  * Hello world!
  *
  */
 public class App 
 {
+    public static void drawShapes(List<? extends Shape> lists){  
+      for(Shape s:lists){  
+          s.draw();
+      }  
+    }  
     public static void main( String[] args )
     {
         
        System.out.println( "Hello World!" );
-       Box<Integer> box = new Box<Integer>();
-       box.set(new Integer(12)); //no error now
-       System.out.println(box.get());
+       List<Rectangle> list1=new ArrayList<Rectangle>();  
+       list1.add(new Rectangle());
+       drawShapes(list1);    
     }
 }
