@@ -6,17 +6,17 @@ import java.util.*;
  */
 public class App 
 {
-    public static void drawShapes(List<? extends Shape> lists){  
-      for(Shape s:lists){  
-          s.draw();
-      }  
-    }  
+    public static void printList(List<?> list) {
+        for (Object elem: list)
+            System.out.print(elem + " ");
+        System.out.println();
+    } 
     public static void main( String[] args )
     {
         
        System.out.println( "Hello World!" );
-       List<Rectangle> list1=new ArrayList<Rectangle>();  
-       list1.add(new Rectangle());
-       drawShapes(list1);    
+      List<Integer> li = Arrays.asList(1, 2, 3);
+      List<String>  ls = Arrays.asList("one", "two", "three");
+      printList(li);   
     }
 }

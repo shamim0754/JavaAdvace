@@ -465,7 +465,7 @@ public static <T extends Comparable<T>> int countGreaterThan(T[] anArray, T elem
     return count;
 }
 ```
-### Wildcard  ###
+### Bounded Wildcard  ###
 
  The ? (Question Mark) symbol represents wildcard element. It means any type. If we write <? extends Number>, it means any child class of Number e.g. Integer, Float, double etc
 
@@ -512,6 +512,31 @@ public class App
        List<Rectangle> list1=new ArrayList<Rectangle>();  
        list1.add(new Rectangle());
        drawShapes(list1);    
+    }
+}
+
+ ```
+
+### UnBounded Wildcard  ###
+
+Update App.java
+
+```java
+public class App 
+{
+    public static void printList(List<?> list) {
+        for (Object elem: list)
+            System.out.print(elem + " ");
+        System.out.println();
+    } 
+    public static void main( String[] args )
+    {
+        
+       System.out.println( "Hello World!" );
+      List<Integer> li = Arrays.asList(1, 2, 3);
+      List<String>  ls = Arrays.asList("one", "two", "three");
+      printList(li);   
+      printList(ls);   
     }
 }
 
