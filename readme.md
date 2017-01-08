@@ -258,7 +258,10 @@ public class App implements Showable.Message
     }
 }
 
-```  
+```
+  
+In collection frameword, sun microsystem has provided a nested interface Entry. Entry is the subinterface of Map i.e. accessed by Map.Entry.
+
 
 ### Generics  Benefits ###
 
