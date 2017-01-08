@@ -233,6 +233,26 @@ interface Showable{
   }  
 }    
 ```  
+or
+
+```java
+package com.javaaround;
+class Showable{  
+  void show();  
+  interface Message{  
+   void msg();  
+  }  
+} 
+```
+or
+
+```java
+interface Showable{  
+  class Message{  
+   void msg();  
+  }  
+} 
+```
 
 update App.java
 
@@ -259,7 +279,7 @@ public class App implements Showable.Message
 }
 
 ```
-  
+
 In collection frameword, sun microsystem has provided a nested interface Entry. Entry is the subinterface of Map i.e. accessed by Map.Entry.
 
 
