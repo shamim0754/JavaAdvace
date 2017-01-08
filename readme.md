@@ -342,8 +342,6 @@ public class Box<T> {
 }
 ```
 
-we can use subType also `Box<T extends Number>`
-
 Now compile time error happens if type mismatch
 ```java
 Box box<Integer> = new Box<Integer>();
@@ -365,6 +363,9 @@ System.out.println(box.get());
 compile the class
 
 `mvn clean compile`
+
+### Bounded Type ###
+`Box<T extends Number>`
 
 ### Type Parameters naming conventions ###
 The type parameters naming conventions are important to learn generics thoroughly. The commonly type parameters are as follows:
@@ -438,9 +439,35 @@ Update App.jva
    Operation.printArray(charArray);   // pass a Character array
  ```
 
+### Bounded Type Parameters ###
+
+Requirements : counts the number of elements in an array T[] that are greater than a specified element elem.
+
+```java
+public static <T> int countGreaterThan(T[] anArray, T elem) {
+    int count = 0;
+    for (T e : anArray)
+        if (e > elem)  // compiler error
+            ++count;
+    return count;
+}
+```
+it does not compile because the greater than operator (>) applies only to primitive types such as short, int, double, long, float, byte, and char.
+
+To fix the problem, use a type parameter bounded by the Comparable<T> interface:
+
+```java
+public static <T extends Comparable<T>> int countGreaterThan(T[] anArray, T elem) {
+    int count = 0;
+    for (T e : anArray)
+        if (e.compareTo(elem) > 0)
+            ++count;
+    return count;
+}
+```
 ### Wildcard  ###
 
- The ? (Wildcard) symbol represents wildcard element. It means any type. If we write <? extends Number>, it means any child class of Number e.g. Integer, Float, double etc
+ The ? (Question Mark) symbol represents wildcard element. It means any type. If we write <? extends Number>, it means any child class of Number e.g. Integer, Float, double etc
 
  Shape.java
  ```java
