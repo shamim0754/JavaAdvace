@@ -434,3 +434,7 @@ Update App.jva
    System.out.println("\nArray characterArray contains:");
    Operation.printArray(charArray);   // pass a Character array
  ```
+
+ ### Wildcard  ###
+
+ The ? (Wildcard) symbol represents wildcard element. It means any type. If we write <? extends Number>, it means any child class of Number e.g. Integer, Float, double etc
