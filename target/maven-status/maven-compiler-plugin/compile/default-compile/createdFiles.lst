@@ -1,5 +1,8 @@
 com\javaaround\Outer.class
+com\javaaround\Showable.class
 com\javaaround\App.class
-com\javaaround\Box.class
 com\javaaround\Outer$1Inner.class
+com\javaaround\Showable$Message.class
+com\javaaround\Box.class
+com\javaaround\Operation.class
 com\javaaround\Adder.class

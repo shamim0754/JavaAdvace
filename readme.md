@@ -223,6 +223,43 @@ A class that have no name is known as anonymous class in java.it enable to makin
 
 	`mvn clean package`	
 
+### Nested Interface ###
+```java
+package com.javaaround;
+interface Showable{  
+  void show();  
+  interface Message{  
+   void msg();  
+  }  
+}    
+```  
+
+update App.java
+
+```java
+package com.javaaround;
+
+/**
+ * Hello world!
+ *
+ */
+public class App implements Showable.Message
+{
+    public void msg(){
+      System.out.println("nested interface");
+    }  
+    public static void main( String[] args )
+    {
+        
+       System.out.println( "Hello World!" );
+        
+       Showable.Message message=new App();//upcasting here  
+       message.msg();  
+    }
+}
+
+```  
+
 ### Generics  Benefits ###
 
 1. Generics add stability to your code by making more of your bugs detectable at compile time.Without generic bugs are arise at runtime that more problematic to fixing.
@@ -339,3 +376,7 @@ From Java 7 the Java compiler can infer the type of the collection instantiated 
  `List<String> strings = new ArrayList<>();`
 
  Notice that generic type of the ArrayList has been left out. Instead is only the <> written. This is also sometimes referred to as the `diamond operator`
+
+ ### Generic Method ### 
+
+ Like generic class, we can create generic method that can accept any type of argument.
