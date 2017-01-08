@@ -404,3 +404,33 @@ From Java 7 the Java compiler can infer the type of the collection instantiated 
 ### Generic Method ### 
 
  Like generic class, we can create generic method that can accept any type of argument.
+
+ ```java
+package com.javaaround;
+public class Operation{  
+  
+   public static < E > void printArray(E[] elements) {  
+        for ( E element : elements){          
+            System.out.println(element );  
+         }  
+         System.out.println();  
+    }  
+}  
+ ```
+
+Update App.jva
+
+ ```java
+   Integer[] intArray = { 1, 2, 3, 4, 5 };
+   Double[] doubleArray = { 1.1, 2.2, 3.3, 4.4 };
+   Character[] charArray = { 'H', 'E', 'L', 'L', 'O' };
+
+   System.out.println("Array integerArray contains:");
+   Operation.printArray(intArray);   // pass an Integer array
+
+   System.out.println("\nArray doubleArray contains:");
+   Operation.printArray(doubleArray);   // pass a Double array
+
+   System.out.println("\nArray characterArray contains:");
+   Operation.printArray(charArray);   // pass a Character array
+ ```
