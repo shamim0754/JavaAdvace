@@ -400,6 +400,7 @@ From Java 7 the Java compiler can infer the type of the collection instantiated 
 
  Notice that generic type of the ArrayList has been left out. Instead is only the <> written. This is also sometimes referred to as the `diamond operator`
 
- ### Generic Method ### 
+
+### Generic Method ### 
 
  Like generic class, we can create generic method that can accept any type of argument.
