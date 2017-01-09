@@ -465,7 +465,7 @@ public static <T extends Comparable<T>> int countGreaterThan(T[] anArray, T elem
     return count;
 }
 ```
-### Bounded Wildcard  ###
+### Upper Bounded Wildcard  ###
 
  The ? (Question Mark) symbol represents wildcard element. It means any type. If we write <? extends Number>, it means any child class of Number e.g. Integer, Float, double etc
 
@@ -516,7 +516,16 @@ public class App
 }
 
  ```
+### Lower Bounded Wildcard  ###
+To write the method that works on lists of Integer and the supertypes of Integer, such as Integer, Number, and Object, you would specify List<? super Integer>.
 
+```java
+public static void addNumbers(List<? super Integer> list) {
+    for (int i = 1; i <= 10; i++) {
+        list.add(i);
+    }
+}
+```
 ### UnBounded Wildcard  ###
 
 Update App.java
@@ -540,4 +549,58 @@ public class App
     }
 }
 
- ```
+```
+
+### Annotation  ###
+
+1. Used to associate metadata(some extra info) into source code which can be used by java compiler and JVM.
+2. Introduce to java 5
+3. Simple to use compare to metadata using xml 
+
+### Built-In Java Annotations ###
+1. @Override
+2. @SuppressWarnings
+3. @Deprecated
+4. @Target
+5. @Retention
+6. @Inherited
+7. @Documented
+
+###  @Override ###
+@Override annotation assures that the subclass method is overriding the parent class method. If it is not so, compile time error occurs.
+
+###  @SuppressWarnings ###
+is used to suppress(remove) warnings issued by the compiler.
+
+Update App.java
+
+```java
+ ArrayList list=new ArrayList();  
+ list.add("A");  
+ list.add("B");  
+ list.add("C");  
+  
+ for(Object obj:list)  
+ System.out.println(obj);
+```
+compile the class
+
+`mvn clean compile`
+
+gives `uses unchecked or unsafe operations.` warning because it use non generic code
+
+For removing this type of warning @SuppressWarnings is used
+
+Now. App.java
+```java
+@SuppressWarnings("unchecked")
+public static void main( String[] args )
+
+```
+
+compile the class again
+
+`mvn clean compile`
+
+Now warning has been gone
+
