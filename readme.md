@@ -587,7 +587,7 @@ compile the class
 
 `mvn clean compile`
 
-gives `uses unchecked or unsafe operations.` warning because it use non generic code
+gives `uses unchecked or unsafe operations.` warning because it use non generic collection
 
 For removing this type of warning @SuppressWarnings is used
 
@@ -603,4 +603,29 @@ compile the class again
 `mvn clean compile`
 
 Now warning has been gone
+
+### @Deprecated ###
+
+@Deprecated annoation marks that this method is deprecated so compiler prints warning. It informs user that it may be removed in the future versions. So, it is better not to use such methods.
+
+```java
+package com.javaaround;
+class A{  
+  @Deprecated  
+  void n(){
+    System.out.println("hello n");
+  }  
+}  
+```
+
+Update App.java
+```java
+A a=new A();  
+a.n();  
+```
+compile the class 
+
+`mvn clean compile`
+
+givs Note: Test.java uses or overrides a deprecated API. warning
 

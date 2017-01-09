@@ -2,6 +2,7 @@ com\javaaround\Outer.class
 com\javaaround\Showable.class
 com\javaaround\App.class
 com\javaaround\Outer$1Inner.class
+com\javaaround\A.class
 com\javaaround\Showable$Message.class
 com\javaaround\Rectangle.class
 com\javaaround\Shape.class
