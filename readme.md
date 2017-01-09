@@ -688,3 +688,12 @@ you can use multiple value
 
 `@TargetElementType.METHOD,ElementType.FIELD)`
 
+@Retention is used to specify to what level annotation will be available
+
+RetentionPolicy | Availability
+----------------- | -------------
+RetentionPolicy.SOURCE | refers to the source code, discarded during compilation
+RetentionPolicy.CLASS | available to java compiler but not to JVM
+RetentionPolicy.RUNTIME | available to java compiler and JVM
+
+
