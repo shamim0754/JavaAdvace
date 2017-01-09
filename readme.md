@@ -684,7 +684,7 @@ import java.lang.reflect.*;
 }  
 ```
 
-@Target is used to specify at which type, the annotation is allow other can't use it.
+@Target is used to specify at which level, the annotation is allow other can't use it.
 
 ElementType | Allow
 ----------------- | -------------
