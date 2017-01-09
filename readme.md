@@ -659,6 +659,16 @@ There are three types of annotations.
 5. Another annotation type
 6. Array of above types String[],int[]
 
+Example | Usage
+-------------- | -------------
+String skils[]    | skils{"java","php"} ,if one value skils="php"
+Class provider()   | provider=Someprovider.class
+Remark remark()
+public enum Remarks{ | remark = Remark.GOOD
+  "GOOD","BAD"
+}
+
+
 1. create MyAnnotation.java
 ```java
 package com.javaaround;
@@ -668,7 +678,9 @@ import java.lang.reflect.*;
 @Retention(RetentionPolicy.RUNTIME)  
 @Target(ElementType.METHOD)  
 @interface MyAnnotation{  
-  int value();  
+  int value(); 
+  //use default keyword if you provide value
+  String value2() default "xyz";   
 }  
 ```
 
@@ -696,28 +708,68 @@ RetentionPolicy.SOURCE | refers to the source code, discarded during compilation
 RetentionPolicy.CLASS | available to java compiler but not to JVM
 RetentionPolicy.RUNTIME | available to java compiler and JVM
 
-2. Usage of MyAnnotaton
+1. Usage of MyAnnotaton
 ```java
 package com.javaaround;
 
 class Hello{  
+  //@MyAnnotation(value=10,value1="shamim")
   @MyAnnotation(value=10)  
   public void sayHello(){
     System.out.println("hello annotation");
   }  
 }
 ```
-3. Access of MyAnnotaton
+2. Access of MyAnnotaton
+
 update App.java
+
 ```java
 try{ 
   Hello h=new Hello();  
   Method m=h.getClass().getMethod("sayHello");  
     
   MyAnnotation manno=m.getAnnotation(MyAnnotation.class);  
-  System.out.println("value is: "+manno.value());
+  System.out.println("value is: "+manno.value()+ "," +manno.value1());
 }catch(Exception e){
   
 }    
 ```
+
+OR Access all annotation of method
+
+```java
+try{ 
+    Class<Hello> c = Hello.class;
+    Annotation[] annotations = c.getDeclaredMethod("sayHello").getAnnotations();
+    for(Annotation annotation : annotations){
+      
+      if(annotation instanceof MyAnnotation){
+        MyAnnotation manno = (MyAnnotation) annotation;
+        System.out.println("value is: "+manno.value() + "," +manno.value1());
+      }
+    }
+  }catch(Exception e){
+
+  }
+```
+
+if you need all annotation of class level(Type)
+```java
+Annotation[] annotations = c.getAnnotations();
+```
+
+### @Inherited ###
+By default, custom annotations are not inherited to subclasses as a result you can't use it into subclasses.The @Inherited annotation marks the annotation to be inherited to subclasses.
+
+```java
+@Inherited 
+@interface MyAnnotation{  
+  int value();  
+}  
+```
+
+### @Documented ###
+
+The @Documented Marks the annotation for inclusion in the documentation
 
