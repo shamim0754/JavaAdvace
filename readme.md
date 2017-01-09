@@ -629,3 +629,10 @@ compile the class
 
 givs Note: Test.java uses or overrides a deprecated API. warning
 
+### Example Junit ###
+
+![Image of Nested](images/annotation.png)
+
+### Example EJB ###
+
+![Image of Nested](images/annotation1.png)
