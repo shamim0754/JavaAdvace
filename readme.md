@@ -663,10 +663,12 @@ Example | Usage
 -------------- | -------------
 String skils[]    | skils{"java","php"} ,if one value skils="php"
 Class provider()   | provider=Someprovider.class
-Remark remark()     |
+```java
+Remark remark()     
 public enum Remarks{ | remark = Remark.GOOD
   "GOOD","BAD"
 }
+```
 
 
 1. create MyAnnotation.java
