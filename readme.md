@@ -636,3 +636,55 @@ givs Note: Test.java uses or overrides a deprecated API. warning
 ### Example EJB ###
 
 ![Image of Nested](images/annotation1.png)
+
+### Custom Annotation ###
+
+```java
+<modifier> @interface <annotation-name>{
+  //body
+}
+```
+
+There are three types of annotations.
+
+1. Marker Annotation : has no method e.g @Override and @Deprecated
+2. Single-Value Annotation : has one method
+3. Multi-Value Annotation :  more one method
+
+### Allow annotation types ###
+1. Primitive types(int , double etc)
+2. java.lang.String
+3. java.lang.Class
+4. Enum
+5. Another annotation type
+6. Array of above types String[],int[]
+
+1. create MyAnnotation.java
+```java
+package com.javaaround;
+import java.lang.annotation.*;  
+import java.lang.reflect.*;  
+  
+@Retention(RetentionPolicy.RUNTIME)  
+@Target(ElementType.METHOD)  
+@interface MyAnnotation{  
+  int value();  
+}  
+```
+
+@Target is used to specify at which type, the annotation is allow other can't use it.
+
+ElementType | Allow
+----------------- | -------------
+ElementType.METHOD  | Only allow methods level used
+ElementType.FIELD  | Only allow field level used
+ElementType.TYPE  | Only allow class,interface,enum level used
+ElementType.CONSTRUCTOR  | Only allow CONSTRUCTOR level used
+ElementType.LOCAL_VARIABLE  | Only allow LOCAL_VARIABLE level used
+ElementType.ANNOTATION_TYPE  | Only allow ANNOTATION_TYPE level used
+ElementType.PARAMETER  | Only allow PARAMETER level used
+
+you can use multiple value 
+
+`@TargetElementType.METHOD,ElementType.FIELD)`
+

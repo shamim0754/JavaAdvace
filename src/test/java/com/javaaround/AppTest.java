@@ -10,7 +10,7 @@ import org.junit.Test;;
  */
 public class AppTest {
    @Test
-   public void AppTest( ){
+   public void AppTest( ) {
         App.main(null);
    }
 }
