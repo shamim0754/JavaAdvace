@@ -696,4 +696,28 @@ RetentionPolicy.SOURCE | refers to the source code, discarded during compilation
 RetentionPolicy.CLASS | available to java compiler but not to JVM
 RetentionPolicy.RUNTIME | available to java compiler and JVM
 
+2. Usage of MyAnnotaton
+```java
+package com.javaaround;
+
+class Hello{  
+  @MyAnnotation(value=10)  
+  public void sayHello(){
+    System.out.println("hello annotation");
+  }  
+}
+```
+3. Access of MyAnnotaton
+update App.java
+```java
+try{ 
+  Hello h=new Hello();  
+  Method m=h.getClass().getMethod("sayHello");  
+    
+  MyAnnotation manno=m.getAnnotation(MyAnnotation.class);  
+  System.out.println("value is: "+manno.value());
+}catch(Exception e){
+  
+}    
+```
 
