@@ -895,106 +895,9 @@ Update App.java
   currency = 1; //compile error
   ```
 3. Enum can be used at Switch statement like int or char primitive data type.from JDK 7 onwards you can also String in Switch case in Java
-```java
-Currency currency = Currency.USD;
-switch (currency) { 
-  case USD: 
-    System.out.println("USD currency"); 
-    break; 
-  case EURO: 
-    System.out.println("EURO currency"); 
-    break; 
-  case SWISSFRANK: 
-    System.out.println("SWISSFRANK currency"); 
-    break; 
-  case TAKA: 
-    System.out.println("TAKA currency"); 
-}
-
-```
-3. Adding new constants on Enum in Java is easy and you can add new constants without breaking the existing code
-
-### Points to remember ###
-1. Enum may implement many interfaces but cannot extend any class because it internally extends `java.lang.Enum` class
-
-```java
-public enum Currency implements Runnable{
-  //code 
-  @Override 
-  public void run() { 
-    System.out.println("Enum in Java implement interfaces"); 
-  }
-
-}
-```
-2. Since compiler internally create class so it can have fields, constructors and methods
-
-```java
-public enum Operation {
-    PLUS,
-    MINUS,
-    TIMES,
-    DIVIDE;
-
-    double calculate(double x, double y) {
-        switch (this) {
-            case PLUS:
-                return x + y;
-            case MINUS:
-                return x - y;
-            case TIMES:
-                return x * y;
-            case DIVIDE:
-                return x / y;
-            default:
-                throw new AssertionError("Unknown operations " + this);
-        }
-    }
-
-}
-```
-Access
-```java
-double result = Operation.PLUS.calculate(1, 2);
-System.out.println(result); //3.0
-```
-3. Constructor of enum type is private. If you don't declare private compiler internally creates private constructor.
-
-4. you can't create instance of enum by new keyword because it contains private constructors
-
-5. Enum constants are implicitly `static and final` and can not be changed once created(cannot be reassigned)
-```javav
-Currency.USD = Currency.EURO; // compilation error
-```
-6.  The compiler automatically adds some special methods when it creates an enum like
-  1.  `values()` : The values() method returns an array containing all the values of the enum
-  2. `valueOf` : Convert a String to Enum object
-  3. `name()` : returns the exact string which is used to create that particular Enum constant
-  4. `ordinal()` : eturns the position of a Enum constant as they declared in enum
-
-7. compare enum using `"=="` or `Java.lang.Enum.equals() ` or `Java.lang.Enum.compareTo()`
-
-```java
-Currency usCurrency = Currency.USD; 
-if(usCurrency == Currency.USD){ 
-  System.out.println("enum in java can be compared using =="); 
-}
-
-/*
-//recommended approvch
-if(usCurrency.equals(Currency.USD)){ 
-  System.out.println("enum in java can be compared using equals"); 
-}
-*/
-```
-8. The semicolon at the end of an enum declaration is optional.
-9.  Enum can override methods 
-```java
-public enum Currency {
-
-  @Override
-  public String toString() {
-    switch (this) { 
+  ```java
+  Currency currency = Currency.USD;
+  switch (currency) { 
     case USD: 
       System.out.println("USD currency"); 
       break; 
@@ -1006,47 +909,144 @@ public enum Currency {
       break; 
     case TAKA: 
       System.out.println("TAKA currency"); 
+  }
+
+  ```
+3. Adding new constants on Enum in Java is easy and you can add new constants without breaking the existing code
+
+### Points to remember ###
+1. Enum may implement many interfaces but cannot extend any class because it internally extends `java.lang.Enum` class
+
+  ```java
+  public enum Currency implements Runnable{
+    //code 
+    @Override 
+    public void run() { 
+      System.out.println("Enum in Java implement interfaces"); 
+    }
+
+  }
+  ```
+2. Since compiler internally create class so it can have fields, constructors and methods
+
+  ```java
+  public enum Operation {
+      PLUS,
+      MINUS,
+      TIMES,
+      DIVIDE;
+
+      double calculate(double x, double y) {
+          switch (this) {
+              case PLUS:
+                  return x + y;
+              case MINUS:
+                  return x - y;
+              case TIMES:
+                  return x * y;
+              case DIVIDE:
+                  return x / y;
+              default:
+                  throw new AssertionError("Unknown operations " + this);
+          }
+      }
+
+  }
+  ```
+Access
+  ```java
+  double result = Operation.PLUS.calculate(1, 2);
+  System.out.println(result); //3.0
+  ```
+3. Constructor of enum type is private. If you don't declare private compiler internally creates private constructor.
+
+4. you can't create instance of enum by new keyword because it contains private constructors
+
+5. Enum constants are implicitly `static and final` and can not be changed once created(cannot be reassigned)
+  ```javav
+  Currency.USD = Currency.EURO; // compilation error
+  ```
+6.  The compiler automatically adds some special methods when it creates an enum like
+  1.  `values()` : The values() method returns an array containing all the values of the enum
+  2. `valueOf` : Convert a String to Enum object
+  3. `name()` : returns the exact string which is used to create that particular Enum constant
+  4. `ordinal()` : eturns the position of a Enum constant as they declared in enum
+
+7. compare enum using `"=="` or `Java.lang.Enum.equals() ` or `Java.lang.Enum.compareTo()`
+
+  ```java
+  Currency usCurrency = Currency.USD; 
+  if(usCurrency == Currency.USD){ 
+    System.out.println("enum in java can be compared using =="); 
+  }
+
+  /*
+  //recommended approvch
+  if(usCurrency.equals(Currency.USD)){ 
+    System.out.println("enum in java can be compared using equals"); 
+  }
+  */
+  ```
+8. The semicolon at the end of an enum declaration is optional.
+9.  Enum can override methods 
+  ```java
+  public enum Currency {
+
+    @Override
+    public String toString() {
+      switch (this) { 
+      case USD: 
+        System.out.println("USD currency"); 
+        break; 
+      case EURO: 
+        System.out.println("EURO currency"); 
+        break; 
+      case SWISSFRANK: 
+        System.out.println("SWISSFRANK currency"); 
+        break; 
+      case TAKA: 
+        System.out.println("TAKA currency"); 
+      }
     }
   }
-}
-```
+  ```
 10. You can define abstract methods inside Enum
 
-```java
-public enum Currency {
-  USD(){
-    @Override 
-    public String color() { 
-      return "copper"; 
-    }
+  ```java
+  public enum Currency {
+    USD(){
+      @Override 
+      public String color() { 
+        return "copper"; 
+      }
 
-  },EURO(){
-    @Override 
-    public String color() { 
-      return "silver"; 
-    }
-  };
-  public abstract String color();
-}
-```
+    },EURO(){
+      @Override 
+      public String color() { 
+        return "silver"; 
+      }
+    };
+    public abstract String color();
+  }
+  ```
 
 Access
-```java
-System.out.println("Color: " + Currency.USD.color());
-```
+  ```java
+  System.out.println("Color: " + Currency.USD.color());
+  ```
 11. Two collection classes  are added into collection package to support Java Enum
 
   1. EnumSet
 
-  ```java
-  //get some value 
-  Set<Currency> currencySet =  EnumSet.of(Currency.USD,Currency.EURO);
-  //get all value
-  Set<Currency> currencySet =  EnumSet.allOf(Currency.class);
+    ```java
+    //get some value 
+    Set<Currency> currencySet =  EnumSet.of(Currency.USD,Currency.EURO);
+    //get all value
+    Set<Currency> currencySet =  EnumSet.allOf(Currency.class);
 
-  //get as a list
-  List<Currency> currencyList =  new ArrayList<Currency>(EnumSet.allOf(Currency.class));
-  ```
+    //get as a list
+    List<Currency> currencyList =  new ArrayList<Currency>(EnumSet.allOf(Currency.class));
+    ```
   2. EnumMap 
 
 
