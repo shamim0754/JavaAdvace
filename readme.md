@@ -1031,18 +1031,19 @@ System.out.println("Color: " + Currency.USD.color());
 ```
 
 11. Two collection classes  are added into collection package to support Java Enum
-1. EnumSet
 
-```java
-//get some value 
-Set<Currency> currencySet =  EnumSet.of(Currency.USD,Currency.EURO);
-//get all value
-Set<Currency> currencySet =  EnumSet.allOf(Currency.class);
+  1. EnumSet
 
-//get as a list
-List<Currency> currencyList =  new ArrayList<Currency>(EnumSet.allOf(Currency.class));
-```
-2. EnumMap 
+  ```java
+  //get some value 
+  Set<Currency> currencySet =  EnumSet.of(Currency.USD,Currency.EURO);
+  //get all value
+  Set<Currency> currencySet =  EnumSet.allOf(Currency.class);
+
+  //get as a list
+  List<Currency> currencyList =  new ArrayList<Currency>(EnumSet.allOf(Currency.class));
+  ```
+  2. EnumMap 
 
 
 
