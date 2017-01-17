@@ -777,21 +777,10 @@ The @Documented Marks the annotation for inclusion in the documentation
 ### Enum ###
 Enum  is a special data type that contains fixed set of constants. it was introduced in JDK 1.5 . Enum is a very useful and well known feature
 
-### Benefits Enum ###
-1. <b>Enum is type-safe</b> you can not assign anything else other than predefined Enum constants to an Enum variable.if assign gives errors
-2. Enum can be used at Switch statement like int or char primitive data type.from JDK 7 onwards you can also String in Switch case in Java
 
-3. Adding new constants on Enum in Java is easy and you can add new constants without breaking the existing code
 
-### Points to remember ###
-1. Enum may implement many interfaces but cannot extend any class because it internally extends `java.lang.Enum` class
-2. Since compiler internally create class so it can have fields, constructors and methods
-3. Constructor of enum type is private. If you don't declare private compiler internally creates private constructor.
-4. you can't create instance of enum by new keyword because it contains private constructors
-5. Enum constants are implicitly `static and final` and can not be changed once created(cannot be reassigned)
-6.  The compiler automatically adds some special methods when it creates an enum like
-  1.  `values()` : The values() method returns an array containing all the values of the enum
-  2. `valueOf` : 
+### Defining  enum ###
+The enum can be defined within or outside the class because it is similar to a class.
 
 1. Create Currency.java
 ```java
@@ -829,6 +818,22 @@ There are 3 ways to access enum.
 1. direct access using the enum value e.g. Currency.USD
 2. access using enum name, e.g. Currency.valueOf("USD")
 3. get enumeration of all enum values using values() method, e.g. Currency.values()
+
+### Benefits Enum ###
+1. <b>Enum is type-safe</b> you can not assign anything else other than predefined Enum constants to an Enum variable.if assign gives errors
+2. Enum can be used at Switch statement like int or char primitive data type.from JDK 7 onwards you can also String in Switch case in Java
+
+3. Adding new constants on Enum in Java is easy and you can add new constants without breaking the existing code
+
+### Points to remember ###
+1. Enum may implement many interfaces but cannot extend any class because it internally extends `java.lang.Enum` class
+2. Since compiler internally create class so it can have fields, constructors and methods
+3. Constructor of enum type is private. If you don't declare private compiler internally creates private constructor.
+4. you can't create instance of enum by new keyword because it contains private constructors
+5. Enum constants are implicitly `static and final` and can not be changed once created(cannot be reassigned)
+6.  The compiler automatically adds some special methods when it creates an enum like
+  1.  `values()` : The values() method returns an array containing all the values of the enum
+  2. `valueOf` : 
 
 
 
