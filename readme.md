@@ -865,6 +865,36 @@ There are 3 ways to access enum.
   2. `valueOf` : Convert a String to Enum object
 
 
+### Initializing enum fields ###  
+enum fields can be initialize when constants define by param.Throwgh param it call constructor.
+
+Update currency.java
+```java
+  USD("$","United Amerial"),EURO("€","England"),SWISSFRANK("₣","Swizerland"),TAKA("৳","Bangladesh");
+  private String icon;
+  private String country; 
+  Currency(String icon, String country){
+    this.icon = icon; 
+    this.country = country; 
+  }
+  public String getIcon(){
+    return icon;
+  }
+  public String getCountry(){
+    return country;
+  }
+
+```
+
+Update App.java
+```java
+ for (Currency currency : Currency.values())  
+    System.out.println("currency name = " + currency 
+      + "icon = "+currency.getIcon() 
+      + "country = "+currency.getCountry());  
+
+```
+
 
 
 
