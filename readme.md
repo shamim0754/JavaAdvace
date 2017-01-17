@@ -1035,7 +1035,6 @@ Access
   System.out.println("Color: " + Currency.USD.color());
   ```
 11. Two collection classes  are added into collection package to support Java Enum
-
   1. EnumSet
 
     ```java
