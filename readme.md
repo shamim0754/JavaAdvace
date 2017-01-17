@@ -778,9 +778,16 @@ The @Documented Marks the annotation for inclusion in the documentation
 Enum  is a special data type that contains fixed set of constants. it was introduced in JDK 1.5 
 
 ### Benefits Enum ###
-1. <b>Enum is type-safe</b> you can not assign anything else other than predefined Enum constants to an Enum variable
+1. <b>Enum is type-safe</b> you can not assign anything else other than predefined Enum constants to an Enum variable.if assign gives errors
 2. Enum can be used at Switch statement like int or char primitive data type
 3. Adding new constants on Enum in Java is easy and you can add new constants without breaking the existing code
+
+### Points to remember ###
+1. Enum may implement many interfaces but cannot extend any class because it internally extends Enum class
+2. Since compiler internally create class so it can have fields, constructors and methods
+3. Constructor of enum type is private. If you don't declare private compiler internally creates private constructor.
+4. can't create instance of enum by new keyword because it contains private constructors
+
 
 
 
