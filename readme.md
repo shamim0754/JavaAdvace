@@ -913,6 +913,17 @@ switch (currency) {
 
 ### Points to remember ###
 1. Enum may implement many interfaces but cannot extend any class because it internally extends `java.lang.Enum` class
+```java
+public enum Currency implements Runnable{
+  //code 
+  @Override 
+  public void run() { 
+    System.out.println("Enum in Java implement interfaces"); 
+  }
+
+Read more: http://javarevisited.blogspot.com/2011/08/enum-in-java-example-tutorial.html#ixzz4W1havZ20
+}
+```
 2. Since compiler internally create class so it can have fields, constructors and methods
 ```java
 public enum Operation {
@@ -955,7 +966,7 @@ Currency.USD = Currency.EURO; // compilation error
   1.  `values()` : The values() method returns an array containing all the values of the enum
   2. `valueOf` : Convert a String to Enum object
 
-7. compare enum using `"=="` or `equals() `
+7. compare enum using `"=="` or `Java.lang.Enum.equals() ` or `Java.lang.Enum.compareTo()`
 
 ```java
 Currency usCurrency = Currency.USD; 
@@ -971,8 +982,52 @@ if(usCurrency.equals(Currency.USD)){
 */
 ```
 8. The semicolon at the end of an enum declaration is optional.
-  
+9.  Enum can override methods 
+```java
+public enum Currency {
 
+  @Override
+  public String toString() {
+    switch (this) { 
+    case USD: 
+      System.out.println("USD currency"); 
+      break; 
+    case EURO: 
+      System.out.println("EURO currency"); 
+      break; 
+    case SWISSFRANK: 
+      System.out.println("SWISSFRANK currency"); 
+      break; 
+    case TAKA: 
+      System.out.println("TAKA currency"); 
+    }
+  }
+}
+```
+10. You can define abstract methods inside Enum
+
+```java
+public enum Currency {
+  USD(){
+    @Override 
+    public String color() { 
+      return "copper"; 
+    }
+
+  },EURO(){
+    @Override 
+    public String color() { 
+      return "silver"; 
+    }
+  };
+  public abstract String color();
+}
+```
+
+Access
+```java
+System.out.println("Color: " + Currency.USD.color());
+```
 
 
 

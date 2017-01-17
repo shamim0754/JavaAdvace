@@ -7,9 +7,7 @@ package com.javaaround;
 public class App 
 {
     public static void main(String args[]){  
-        for (Currency currency : Currency.values())  
-          System.out.println("currency name = " + currency 
-            + "icon = "+currency.getIcon() + "country = "+currency.getCountry());  
-
+        System.out.println("Color: " + Currency.USD.color());
+       
     }
 }
