@@ -799,6 +799,7 @@ package com.javaaround;
  */
 public class App 
 {
+
     public static void main(String args[]){
         //1
         System.out.println(Currency.USD); 
@@ -812,7 +813,35 @@ public class App
 }
 
 ```
+defined within class
+```java
+App.java
+```java
+package com.javaaround;
 
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public enum Currency {
+       USD,EURO,SWISSFRANK,TAKA;
+    }
+    public static void main(String args[]){
+        //1
+        System.out.println(Currency.USD); 
+        //2
+        System.out.println(Currency.valueOf("USD")); 
+        //3 
+        for (Currency currency : Currency.values())  
+          System.out.println(currency);  
+
+    }
+}
+
+```
+```
 ### Access Enum ###
 There are 3 ways to access enum.
 
@@ -834,7 +863,7 @@ There are 3 ways to access enum.
 5. Enum constants are implicitly `static and final` and can not be changed once created(cannot be reassigned)
 6.  The compiler automatically adds some special methods when it creates an enum like
   1.  `values()` : The values() method returns an array containing all the values of the enum
-  2. `valueOf` : 
+  2. `valueOf` : Convert a String to Enum object
 
 
 
