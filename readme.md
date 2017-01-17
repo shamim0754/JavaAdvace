@@ -978,7 +978,7 @@ if(usCurrency == Currency.USD){
 /*
 //recommended approvch
 if(usCurrency.equals(Currency.USD)){ 
-  System.out.println("enum in java can be compared using =="); 
+  System.out.println("enum in java can be compared using equals"); 
 }
 */
 ```
@@ -1028,6 +1028,11 @@ public enum Currency {
 Access
 ```java
 System.out.println("Color: " + Currency.USD.color());
+```
+
+11. Two new collection classes EnumMap and EnumSet are added into collection package to support Java Enum
+```java
+List<Currency> currencyList =  new ArrayList<Currency>(EnumSet.allOf(Currency.class));
 ```
 
 
