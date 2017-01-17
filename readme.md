@@ -1030,7 +1030,9 @@ Access
 System.out.println("Color: " + Currency.USD.color());
 ```
 
-11. Two new collection classes EnumMap and EnumSet are added into collection package to support Java Enum
+11. Two collection classes  are added into collection package to support Java Enum
+1. EnumSet
+
 ```java
 //get some value 
 Set<Currency> currencySet =  EnumSet.of(Currency.USD,Currency.EURO);
@@ -1040,6 +1042,7 @@ Set<Currency> currencySet =  EnumSet.allOf(Currency.class);
 //get as a list
 List<Currency> currencyList =  new ArrayList<Currency>(EnumSet.allOf(Currency.class));
 ```
+2. EnumMap 
 
 
 
