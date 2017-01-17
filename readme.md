@@ -881,16 +881,19 @@ Update App.java
 
 
 ### Benefits Enum ###
-1. Enum are reference type like class or interface 
-```java
-Currency currency = Currency.USD;
 
-```
+1. Enum are reference type like class or interface
+
+  ```java
+  Currency currency = Currency.USD;
+
+  ```
 2. <b>Enum is type-safe</b> you can not assign anything else other than predefined Enum constants to an Enum variable.if assign gives errors
-```java
-Currency currency = Currency.USD;
-currency = 1; //compile error
-```
+
+  ```java
+  Currency currency = Currency.USD;
+  currency = 1; //compile error
+  ```
 3. Enum can be used at Switch statement like int or char primitive data type.from JDK 7 onwards you can also String in Switch case in Java
 ```java
 Currency currency = Currency.USD;
