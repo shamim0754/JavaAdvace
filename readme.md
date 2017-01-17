@@ -850,7 +850,7 @@ There are 3 ways to access enum.
 
 ### Initializing enum fields ### 
 
-enum fields can be initialize when constants define by param.Throwgh param it call constructor.
+enum fields can be initialize when constants define by param.Through param it call constructor to set field value.
 
 Update currency.java
 ```java
@@ -881,20 +881,97 @@ Update App.java
 
 
 ### Benefits Enum ###
-1. <b>Enum is type-safe</b> you can not assign anything else other than predefined Enum constants to an Enum variable.if assign gives errors
-2. Enum can be used at Switch statement like int or char primitive data type.from JDK 7 onwards you can also String in Switch case in Java
+1. Enum are reference type like class or interface 
+```java
+Currency currency = Currency.USD;
 
+```
+2. <b>Enum is type-safe</b> you can not assign anything else other than predefined Enum constants to an Enum variable.if assign gives errors
+```java
+Currency currency = Currency.USD;
+currency = 1; //compile error
+```
+3. Enum can be used at Switch statement like int or char primitive data type.from JDK 7 onwards you can also String in Switch case in Java
+```java
+Currency currency = Currency.USD;
+switch (currency) { 
+  case USD: 
+    System.out.println("USD currency"); 
+    break; 
+  case EURO: 
+    System.out.println("EURO currency"); 
+    break; 
+  case SWISSFRANK: 
+    System.out.println("SWISSFRANK currency"); 
+    break; 
+  case TAKA: 
+    System.out.println("TAKA currency"); 
+}
+
+```
 3. Adding new constants on Enum in Java is easy and you can add new constants without breaking the existing code
 
 ### Points to remember ###
 1. Enum may implement many interfaces but cannot extend any class because it internally extends `java.lang.Enum` class
 2. Since compiler internally create class so it can have fields, constructors and methods
+```java
+public enum Operation {
+    PLUS,
+    MINUS,
+    TIMES,
+    DIVIDE;
+
+    double calculate(double x, double y) {
+        switch (this) {
+            case PLUS:
+                return x + y;
+            case MINUS:
+                return x - y;
+            case TIMES:
+                return x * y;
+            case DIVIDE:
+                return x / y;
+            default:
+                throw new AssertionError("Unknown operations " + this);
+        }
+    }
+
+}
+```
+Access
+```java
+double result = Operation.PLUS.calculate(1, 2);
+System.out.println(result); //3.0
+```
 3. Constructor of enum type is private. If you don't declare private compiler internally creates private constructor.
+
 4. you can't create instance of enum by new keyword because it contains private constructors
+
 5. Enum constants are implicitly `static and final` and can not be changed once created(cannot be reassigned)
+```javav
+Currency.USD = Currency.EURO; // compilation error
+```
 6.  The compiler automatically adds some special methods when it creates an enum like
   1.  `values()` : The values() method returns an array containing all the values of the enum
   2. `valueOf` : Convert a String to Enum object
+
+7. compare enum using `"=="` or `equals() `
+
+```java
+Currency usCurrency = Currency.USD; 
+if(usCurrency == Currency.USD){ 
+  System.out.println("enum in java can be compared using =="); 
+}
+
+/*
+//recommended approvch
+if(usCurrency.equals(Currency.USD)){ 
+  System.out.println("enum in java can be compared using =="); 
+}
+*/
+```
+8. The semicolon at the end of an enum declaration is optional.
+  
 
 
 

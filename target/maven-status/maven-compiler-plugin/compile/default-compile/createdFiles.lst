@@ -1,14 +1,11 @@
-com\javaaround\Rectangle.class
-com\javaaround\TestAnno.class
-com\javaaround\MyAnnotation.class
-com\javaaround\Outer.class
 com\javaaround\Showable.class
-com\javaaround\App.class
-com\javaaround\Outer$1Inner.class
 com\javaaround\Hello.class
 com\javaaround\Showable$Message.class
 com\javaaround\Currency.class
+com\javaaround\Rectangle.class
 com\javaaround\Shape.class
+com\javaaround\TestAnno.class
 com\javaaround\Box.class
+com\javaaround\MyAnnotation.class
 com\javaaround\Operation.class
 com\javaaround\Adder.class
