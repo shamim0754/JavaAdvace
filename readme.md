@@ -921,7 +921,6 @@ public enum Currency implements Runnable{
     System.out.println("Enum in Java implement interfaces"); 
   }
 
-Read more: http://javarevisited.blogspot.com/2011/08/enum-in-java-example-tutorial.html#ixzz4W1havZ20
 }
 ```
 2. Since compiler internally create class so it can have fields, constructors and methods
@@ -965,6 +964,8 @@ Currency.USD = Currency.EURO; // compilation error
 6.  The compiler automatically adds some special methods when it creates an enum like
   1.  `values()` : The values() method returns an array containing all the values of the enum
   2. `valueOf` : Convert a String to Enum object
+  3. `name()` : returns the exact string which is used to create that particular Enum constant
+  4. `ordinal()` : eturns the position of a Enum constant as they declared in enum
 
 7. compare enum using `"=="` or `Java.lang.Enum.equals() ` or `Java.lang.Enum.compareTo()`
 
