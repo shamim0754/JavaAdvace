@@ -1,5 +1,5 @@
 package com.javaaround;
-
+import java.util.*;  
 /**
  * Hello world!
  *
@@ -7,7 +7,10 @@ package com.javaaround;
 public class App 
 {
     public static void main(String args[]){  
-        System.out.println("Color: " + Currency.USD.color());
        
+       Set<Currency> currencySet =  EnumSet.of(Currency.USD,Currency.EURO);
+       for(Currency currency : currencySet)
+        System.out.println("currency: " + currency);
+
     }
 }
