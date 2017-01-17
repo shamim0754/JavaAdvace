@@ -814,8 +814,7 @@ public class App
 
 ```
 defined within class
-```java
-App.java
+
 ```java
 package com.javaaround;
 
@@ -841,7 +840,7 @@ public class App
 }
 
 ```
-```
+
 ### Access Enum ###
 There are 3 ways to access enum.
 
