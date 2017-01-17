@@ -815,6 +815,7 @@ public class App
 
 ### Access Enum ###
 There are 3 ways to access enum.
+
 1. direct access using the enum value e.g. Currency.USD
 2. access using enum name, e.g. Currency.valueOf("USD")
 3. get enumeration of all enum values using values() method, e.g. Currency.values()
