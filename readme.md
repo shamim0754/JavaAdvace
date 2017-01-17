@@ -913,6 +913,7 @@ switch (currency) {
 
 ### Points to remember ###
 1. Enum may implement many interfaces but cannot extend any class because it internally extends `java.lang.Enum` class
+
 ```java
 public enum Currency implements Runnable{
   //code 
@@ -924,6 +925,7 @@ public enum Currency implements Runnable{
 }
 ```
 2. Since compiler internally create class so it can have fields, constructors and methods
+
 ```java
 public enum Operation {
     PLUS,
