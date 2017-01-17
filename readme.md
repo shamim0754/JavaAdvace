@@ -773,3 +773,16 @@ By default, custom annotations are not inherited to subclasses as a result you c
 
 The @Documented Marks the annotation for inclusion in the documentation
 
+
+### Enum ###
+Enum  is a special data type that contains fixed set of constants. it was introduced in JDK 1.5 
+
+### Benefits Enum ###
+1. <b>Enum is type-safe</b> you can not assign anything else other than predefined Enum constants to an Enum variable
+2. Enum can be used at Switch statement like int or char primitive data type
+3. Adding new constants on Enum in Java is easy and you can add new constants without breaking the existing code
+
+
+
+
+
