@@ -1389,3 +1389,36 @@ Student s1 = new Student(101,"shamim",23);
 Student s2 = new Student(101,"alamin",23); 
 System.out.println("s1 & s2 equal : " + s1.equals(s2));
 ```
+
+
+###  hashCode() ###
+
+The `java.lang.Object.hashCode()` method returns a hash code value for the object. This method override is necessary  when using hash based collection like `java.util.Hashtable`,`java.util.HashMap`,`java.util.HashSet`
+
+String Object `hashCode` method override by java api programmer
+
+```java
+public int hashCode() {
+   // private final char value[];
+    int h = 0;
+    if (h == 0 && value.length > 0) {
+        char val[] = value;
+
+        for (int i = 0; i < value.length; i++) {
+            h = 31 * h + val[i];
+        }
+        hash = h;
+    }
+    return h;
+}
+```
+
+Wrapper Class(e.g Integer)
+Integer Object hashCode() override by java api programmer
+
+```java
+public static int hashCode(int value) {
+    return value;
+}
+```
+
