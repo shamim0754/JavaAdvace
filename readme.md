@@ -1104,9 +1104,11 @@ String class and Wrapper classes implements Comparable interface by default.
      System.out.println(s1 + " then " + s2);
     else
      System.out.println(s1 + " equal " + s2);
+
     ```
 
     Replace s1 by s1
+    
 
     ```java
      String s1 = "alamin";  
@@ -1120,6 +1122,7 @@ String class and Wrapper classes implements Comparable interface by default.
        System.out.println(s1 + "then" + s2);
      else
        System.out.println(s1 + "equal" + s2);
+
     ```
 
 2. Wrapper classes
