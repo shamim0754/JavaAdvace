@@ -1277,15 +1277,14 @@ comparable & comparator is generally used in collection
 Sort by `comparable interface`
 
 ```java
-ArrayList al=new ArrayList();  
+ArrayList<Student> al=new ArrayList();  
 al.add(new Student(101,"shamim",23));  
 al.add(new Student(102,"alamin",28));  
  
 Collections.sort(al);  
-Iterator itr=al.iterator();  
-while(itr.hasNext()){  
-Student st=(Student)itr.next();  
-System.out.println(st.rollno+" "+st.name+" "+st.age);
+ 
+for(Student student : al)  
+  System.out.println(student.rollno+" "+student.name+" "+student.age);
 
 ```
 
