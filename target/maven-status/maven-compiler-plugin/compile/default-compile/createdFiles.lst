@@ -2,6 +2,7 @@ com\javaaround\Rectangle.class
 com\javaaround\TestAnno.class
 com\javaaround\MyAnnotation.class
 com\javaaround\Student.class
+com\javaaround\AgeComparator.class
 com\javaaround\Outer.class
 com\javaaround\Showable.class
 com\javaaround\App.class

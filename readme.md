@@ -1219,3 +1219,53 @@ public int compareTo(Student student){
      
 }  
 ```
+
+### Comparator interface ###
+
+`Comparable` interface allow to sort one property at a time as a result if you want to sort using other property  you need to update `Student.java` also.it is so much dependent Student.java
+
+To overcome such problem java introduce `Comparator` interface . by Comparator you need not to change existing code
+
+java.util.Comparator syntax
+```java
+public interface Comparator{
+  public int compare(Object obj1,Object obj2)
+}
+```
+
+1. create AgeComparator.java
+
+
+```java
+package com.javaaround;
+import java.util.*;  
+class AgeComparator implements Comparator{   
+  
+  public int compare(Object o1,Object o2){
+    Student s1=(Student)o1;  
+    Student s2=(Student)o2;    
+    if(s1.age == s2.age)  
+      return 0;  
+    else if(s1.age > s2.age)  
+      return 1;  
+    else  
+      return -1;  
+
+  }  
+}  
+```
+
+2. Update App.java
+```java
+Student s1 = new Student(101,"shamim",23);  
+Student s2 = new Student(102,"alamin",28); 
+
+int count =  new AgeComparator().compare(s1,s2); 
+System.out.println(count);
+if(count > 1)
+ System.out.println(s2.name + "->" + s1.name);
+else if (count < 1)
+ System.out.println(s1.name + "->" + s2.name);
+else
+ System.out.println(s1.name + "=" + s2.name);
+```

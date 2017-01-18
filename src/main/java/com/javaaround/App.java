@@ -11,7 +11,7 @@ public class App
      Student s1 = new Student(101,"shamim",23);  
      Student s2 = new Student(102,"alamin",28); 
     
-     int count =  s1.compareTo(s2); 
+     int count =  new AgeComparator().compare(s1,s2); 
      System.out.println(count);
      if(count > 1)
        System.out.println(s2.name + "->" + s1.name);
