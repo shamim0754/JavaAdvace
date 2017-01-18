@@ -988,6 +988,17 @@ Access
   */
   ```
 8. The semicolon at the end of an enum declaration is optional.
+  ```java
+   public enum Days {  
+      Monday, Tuesday, Wednesday, Thursday  
+   };
+   //or
+   /*
+   public enum Days {  
+      Monday, Tuesday, Wednesday, Thursday  
+   }
+   */
+  ```
 9.  Enum can override methods 
   ```java
   public enum Currency {
@@ -1042,7 +1053,11 @@ Access
     Set<Currency> currencySet =  EnumSet.of(Currency.USD,Currency.EURO);
     //get all value
     Set<Currency> currencySet =  EnumSet.allOf(Currency.class);
+    //get range value
+    Set<Currency> currencySet =  EnumSet.range(Currency.USD,Currency.TAKA);
 
+    //get empty set
+    Set<Currency> currencySet =  EnumSet.noneOf(Currency.class);
     //get as a list
     List<Currency> currencyList =  new ArrayList<Currency>(EnumSet.allOf(Currency.class));
     ```
