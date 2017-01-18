@@ -1094,12 +1094,12 @@ String class and Wrapper classes implements Comparable interface by default.
 
 ![Image of Nested](images/ascii.png)
 
-1. String class : difference of first mismatch character ascii value.it either 0,>0,< 0
+1. String class : Java String classes overide compareTo method such a way that return difference of first mismatch character ascii value.it either 0,>0,< 0
 
     ```java
     String s1 = "shamim";  
     String s2 = "alamin"; 
-    // from s2 to s1 = 18 character alphabetic order top to bottom 
+    // difference s2 to s1 (112-97) = 18 
     int count =  s1.compareTo(s2); 
     System.out.println(count);
     if(count > 1)
@@ -1117,7 +1117,7 @@ String class and Wrapper classes implements Comparable interface by default.
     ```java
      String s1 = "alamin";  
      String s2 = "shamim"; 
-     // from s2 to s1 = -18 character alphabetic order bottom to top 
+     // difference s2 to s1 (97-112) = -18 
      int count =  s1.compareTo(s2); 
      System.out.println(count);
      if(count > 1)
@@ -1129,7 +1129,7 @@ String class and Wrapper classes implements Comparable interface by default.
 
     ```
 
-2. Wrapper classes : remember compareTo return either 0, 1 or -1
+2. Wrapper classes : Java Wrapper classes overide compareTo method such a way that return either 0, 1 or -1
 
 
    ```java
@@ -1163,3 +1163,59 @@ String class and Wrapper classes implements Comparable interface by default.
    ```
 
 ### Sort User-define Object ###
+User-define object must be implements override `compareTo` method such a way that return either 0, 1 or -1(Wrapper class) or 0,>0,< 0(String)
+
+User define String property sort
+
+1. Create Student.java
+
+```java
+package com.javaaround;
+import java.util.*;  
+class Student implements Comparable<Student>{  
+  int rollno;  
+  String name;  
+  int age;  
+  Student(int rollno,String name,int age){  
+    this.rollno=rollno;  
+    this.name=name;  
+    this.age=age;  
+  }  
+  
+  public int compareTo(Student student){  
+    return name.compareTo(student.name);
+  }  
+}  
+```
+
+App.java
+
+```java
+ Student s1 = new Student(101,"shamim",23);  
+ Student s2 = new Student(102,"alamin",28); 
+
+ int count =  s1.compareTo(s2); 
+ System.out.println(count);
+ if(count > 1)
+   System.out.println(s2.name + "->" + s1.name);
+ else if (count < 1)
+   System.out.println(s1.name + "->" + s2.name);
+ else
+   System.out.println(s1.name + "=" + s2.name);
+```
+
+User define Wrapper property sort
+
+Update Student.java
+
+```java
+public int compareTo(Student student){  
+    if(age == student.age)  
+      return 0;  
+    else if(age > student.age)  
+      return 1;  
+    else  
+      return -1;  
+     
+}  
+```

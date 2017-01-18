@@ -11,6 +11,12 @@ class Student implements Comparable<Student>{
 	}  
   
 	public int compareTo(Student student){  
-		return name.compareTo(student.name);
+		if(age == student.age)  
+			return 0;  
+		else if(age > student.age)  
+			return 1;  
+		else  
+			return -1;  
+
 	}  
 }  
