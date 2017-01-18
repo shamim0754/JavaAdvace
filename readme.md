@@ -565,6 +565,7 @@ public class App
 5. @Retention
 6. @Inherited
 7. @Documented
+7. @toString
 
 ###  @Override ###
 @Override annotation assures that the subclass method is overriding the parent class method. If it is not so, compile time error occurs.
@@ -1091,7 +1092,9 @@ public interface Comparable{
 ### Sort String & Wrapper ###
 String class and Wrapper classes implements Comparable interface by default.
 
-1. String class
+![Image of Nested](images/ascii.png)
+
+1. String class : difference of first mismatch character ascii value.it either 0,>0,< 0
 
     ```java
     String s1 = "shamim";  
@@ -1126,7 +1129,8 @@ String class and Wrapper classes implements Comparable interface by default.
 
     ```
 
-2. Wrapper classes
+2. Wrapper classes : remember compareTo return either 0, 1 or -1
+
 
    ```java
    Integer int1 = 1;  
