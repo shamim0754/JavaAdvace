@@ -1064,7 +1064,14 @@ Access
   2. EnumMap : EnumMap class is the specialized Map implementation for use enum as keys.
 
     ```java
-
+    EnumMap<Currency, String> map = new EnumMap<Currency, String>(Currency.class);  
+     map.put(Currency.USD, "1");  
+     map.put(Currency.EURO, "2");  
+     map.put(Currency.SWISSFRANK, "3");  
+     map.put(Currency.TAKA, "4");  
+     // print the map  
+     for(Map.Entry m:map.entrySet()) 
+         System.out.println(m.getKey()+" "+m.getValue());
     ```
 
 
