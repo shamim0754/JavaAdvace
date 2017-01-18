@@ -1128,7 +1128,7 @@ String class and Wrapper classes implements Comparable interface by default.
        System.out.println(s1 + "equal" + s2);
 
     ```
-    
+
 Note : since uppercase and lowercase ascii value different so it is not equal to compare .for such case you use
 
 ```java
@@ -1306,7 +1306,11 @@ Collections.sort(al,new AgeComparator());
 
 `Java.lang.Object` has methods called hasCode() and equals(). These methods play a significant role in the real time application.Every object extends `java.lang.Object`
 
-String Object equals override by java programmer
+### equals() method ###
+
+equals() method is used to equal any object!!!!!.e.g String Object
+
+String Object `equals` method override by java programmer
 
 ```java
 public boolean equals(Object anObject) {
@@ -1329,6 +1333,18 @@ public boolean equals(Object anObject) {
             }
             return true;
         }
+    }
+    return false;
+}
+```
+
+Wrapper Class(e.g Integer)
+Integer Object equals override by java programmer
+
+```java
+public boolean equals(Object obj) {
+    if (obj instanceof Integer) {
+        return value == ((Integer)obj).intValue();
     }
     return false;
 }
