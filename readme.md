@@ -1061,7 +1061,11 @@ Access
     //get as a list
     List<Currency> currencyList =  new ArrayList<Currency>(EnumSet.allOf(Currency.class));
     ```
-  2. EnumMap 
+  2. EnumMap : EnumMap class is the specialized Map implementation for use enum as keys.
+
+    ```java
+
+    ```
 
 
 
