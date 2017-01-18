@@ -1310,7 +1310,7 @@ Collections.sort(al,new AgeComparator());
 
 equals() method is used to equal any object!!!!!.e.g String Object
 
-String Object `equals` method override by java programmer
+String Object `equals` method override by java api programmer
 
 ```java
 public boolean equals(Object anObject) {
@@ -1339,7 +1339,7 @@ public boolean equals(Object anObject) {
 ```
 
 Wrapper Class(e.g Integer)
-Integer Object equals override by java programmer
+Integer Object equals override by java api programmer
 
 ```java
 public boolean equals(Object obj) {
@@ -1348,4 +1348,44 @@ public boolean equals(Object obj) {
     }
     return false;
 }
+```
+
+User-define class (Student) equals override by own for current equal logic
+we can get help of Integer overide that is done by java api programmer
+
+Update Student.java
+
+```java
+  @Override
+  public boolean equals(Object obj) {
+      if (obj instanceof Student) {
+        Student student = (Student) obj;
+          return this.rollno == student.rollno 
+                 && this.age == student.age;
+      }
+      return false;
+} 
+```
+
+Update App.java
+```java
+Student s1 = new Student(101,"shamim",23);  
+Student s2 = new Student(101,"alamin",28); 
+System.out.println("s1 & s2 equal : " + s1.equals(s2));
+```
+
+if you decide rollno and age (any logic) equal then those object eqauls.
+
+Update Student.java
+
+```java
+ return this.rollno == student.rollno 
+        && this.age == student.age;
+```
+
+Update App.java
+```java
+Student s1 = new Student(101,"shamim",23);  
+Student s2 = new Student(101,"alamin",23); 
+System.out.println("s1 & s2 equal : " + s1.equals(s2));
 ```

@@ -9,16 +9,8 @@ public class App
     public static void main(String args[]){  
       
      Student s1 = new Student(101,"shamim",23);  
-     Student s2 = new Student(102,"alamin",28); 
-    
-     int count =  new AgeComparator().compare(s1,s2); 
-     System.out.println(count);
-     if(count > 1)
-       System.out.println(s2.name + "->" + s1.name);
-     else if (count < 1)
-       System.out.println(s1.name + "->" + s2.name);
-     else
-       System.out.println(s1.name + "=" + s2.name);
+     Student s2 = new Student(101,"alamin",23); 
+     System.out.println("s1 & s2 equal : " + s1.equals(s2));
   
     }
 }
