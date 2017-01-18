@@ -1269,3 +1269,27 @@ else if (count < 1)
 else
  System.out.println(s1.name + "=" + s2.name);
 ```
+
+### Sorting in Collection ###
+
+Sort by `comparable interface`
+
+```java
+ArrayList al=new ArrayList();  
+al.add(new Student(101,"shamim",23));  
+al.add(new Student(102,"alamin",28));  
+ 
+Collections.sort(al);  
+Iterator itr=al.iterator();  
+while(itr.hasNext()){  
+Student st=(Student)itr.next();  
+System.out.println(st.rollno+" "+st.name+" "+st.age);
+
+```
+
+Sort by `comparator interface`
+ 
+```java
+Collections.sort(al,new AgeComparator());  
+
+```
