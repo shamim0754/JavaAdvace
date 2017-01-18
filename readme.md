@@ -1091,39 +1091,40 @@ public interface Comparable{
 ### Sort String & Wrapper ###
 String class and Wrapper classes implements Comparable interface by default.
 1.  String class
-      Update App.java
-      ```java
-      String s1 = "shamim";  
-      String s2 = "alamin"; 
-      // from s2 to s1 = 18 character alphabetic order top to bottom 
-      int count =  s1.compareTo(s2); 
-      System.out.println(count);
-      if(count > 1)
+
+    ```java
+    String s1 = "shamim";  
+    String s2 = "alamin"; 
+    // from s2 to s1 = 18 character alphabetic order top to bottom 
+    int count =  s1.compareTo(s2); 
+    System.out.println(count);
+    if(count > 1)
+     System.out.println(s2 + " then " + s1);
+    else if (count < 1)
+     System.out.println(s1 + " then " + s2);
+    else
+     System.out.println(s1 + " equal " + s2);
+    ```
+
+    Replace s1 by s1
+
+    ```java
+     String s1 = "alamin";  
+     String s2 = "shamim"; 
+     // from s2 to s1 = -18 character alphabetic order bottom to top 
+     int count =  s1.compareTo(s2); 
+     System.out.println(count);
+     if(count > 1)
        System.out.println(s2 + " then " + s1);
-      else if (count < 1)
-       System.out.println(s1 + " then " + s2);
-      else
-       System.out.println(s1 + " equal " + s2);
-      ```
-
-      Replace s1 by s1
-
-      ```java
-       String s1 = "alamin";  
-       String s2 = "shamim"; 
-       // from s2 to s1 = -18 character alphabetic order bottom to top 
-       int count =  s1.compareTo(s2); 
-       System.out.println(count);
-       if(count > 1)
-         System.out.println(s2 + " then " + s1);
-       else if (count < 1)
-         System.out.println(s1 + "then" + s2);
-       else
-         System.out.println(s1 + "equal" + s2);
-      ```
+     else if (count < 1)
+       System.out.println(s1 + "then" + s2);
+     else
+       System.out.println(s1 + "equal" + s2);
+    ```
 
 2. Wrapper classes
-    ```java
+
+   ```java
    Integer int1 = 1;  
    Integer int2 = 2;
    // from int2 to int1 = -1(always) since int2 > int1
@@ -1153,3 +1154,4 @@ String class and Wrapper classes implements Comparable interface by default.
      System.out.println(int1 + "equal" + int2);
    ```
 
+### Sort User-define Object ###
