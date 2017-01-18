@@ -1090,7 +1090,8 @@ public interface Comparable{
 
 ### Sort String & Wrapper ###
 String class and Wrapper classes implements Comparable interface by default.
-1.  String class
+
+1. String class
 
     ```java
     String s1 = "shamim";  
@@ -1108,7 +1109,7 @@ String class and Wrapper classes implements Comparable interface by default.
     ```
 
     Replace s1 by s1
-    
+
 
     ```java
      String s1 = "alamin";  
