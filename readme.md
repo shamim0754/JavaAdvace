@@ -1128,6 +1128,13 @@ String class and Wrapper classes implements Comparable interface by default.
        System.out.println(s1 + "equal" + s2);
 
     ```
+    
+Note : since uppercase and lowercase ascii value different so it is not equal to compare .for such case you use
+
+```java
+String s1 = "alamin".toLowerCase();  
+String s2 = "Shamim".toLowerCase(); 
+```
 
 2. Wrapper classes : Java Wrapper classes overide compareTo method such a way that return either 0, 1 or -1
 
@@ -1293,4 +1300,36 @@ Sort by `comparator interface`
 ```java
 Collections.sort(al,new AgeComparator());  
 
+```
+
+### equals() & hasCode() ###
+
+`Java.lang.Object` has methods called hasCode() and equals(). These methods play a significant role in the real time application.Every object extends `java.lang.Object`
+
+String Object equals override by java programmer
+
+```java
+public boolean equals(Object anObject) {
+    //string pool if same reference
+    if (this == anObject) {
+        return true;
+    }
+    //check content equals if reference is not same
+    if (anObject instanceof String) {
+        String anotherString = (String)anObject;
+        int n = value.length;
+        if (n == anotherString.value.length) {
+            char v1[] = value;
+            char v2[] = anotherString.value;
+            int i = 0;
+            while (n-- != 0) {
+                if (v1[i] != v2[i])
+                    return false;
+                i++;
+            }
+            return true;
+        }
+    }
+    return false;
+}
 ```
