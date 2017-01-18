@@ -1074,7 +1074,82 @@ Access
          System.out.println(m.getKey()+" "+m.getValue());
     ```
 
+### Sort Object ###
+We can sort the elements of:
 
+1. String objects
+2. Wrapper class objects
+3. User-defined class objects
 
+For sort above object we need to implement `java.util.Comparable` interface.java.util.Comparable syntax
+```java
+public interface Comparable{
+  public int compareTo(Object obj);
+}
+```
 
+### Sort String & Wrapper ###
+String class and Wrapper classes implements Comparable interface by default.
+1.  String class
+      Update App.java
+      ```java
+      String s1 = "shamim";  
+      String s2 = "alamin"; 
+      // from s2 to s1 = 18 character alphabetic order top to bottom 
+      int count =  s1.compareTo(s2); 
+      System.out.println(count);
+      if(count > 1)
+       System.out.println(s2 + " then " + s1);
+      else if (count < 1)
+       System.out.println(s1 + " then " + s2);
+      else
+       System.out.println(s1 + " equal " + s2);
+      ```
+
+      Replace s1 by s1
+
+      ```java
+       String s1 = "alamin";  
+       String s2 = "shamim"; 
+       // from s2 to s1 = -18 character alphabetic order bottom to top 
+       int count =  s1.compareTo(s2); 
+       System.out.println(count);
+       if(count > 1)
+         System.out.println(s2 + " then " + s1);
+       else if (count < 1)
+         System.out.println(s1 + "then" + s2);
+       else
+         System.out.println(s1 + "equal" + s2);
+      ```
+
+2. Wrapper classes
+    ```java
+   Integer int1 = 1;  
+   Integer int2 = 2;
+   // from int2 to int1 = -1(always) since int2 > int1
+   int count =  int1.compareTo(int2); 
+   System.out.println(count);
+   if(count == 1)
+     System.out.println(int2 + " then " + int1);
+   else if (count == -1)
+     System.out.println(int1 + " then " + int2);
+   else
+     System.out.println(int1 + "equal" + int2);
+   ```
+
+   Replace int1 by int2
+
+   ```java
+   Integer int1 = 2;  
+   Integer int2 = 1;
+   // from int2 to int1 = 1(always) since int1 > int2
+   int count =  int1.compareTo(int2); 
+   System.out.println(count);
+   if(count == 1)
+     System.out.println(int2 + " then " + int1);
+   else if (count == -1)
+     System.out.println(int1 + " then " + int2);
+   else
+     System.out.println(int1 + "equal" + int2);
+   ```
 

@@ -7,14 +7,18 @@ import java.util.*;
 public class App 
 {
     public static void main(String args[]){  
-       
-     EnumMap<Currency, String> map = new EnumMap<Currency, String>(Currency.class);  
-     map.put(Currency.USD, "1");  
-     map.put(Currency.EURO, "2");  
-     map.put(Currency.SWISSFRANK, "3");  
-     map.put(Currency.TAKA, "4");  
-     // print the map  
-     for(Map.Entry m:map.entrySet()) 
-         System.out.println(m.getKey()+" "+m.getValue());    
+      
+     Integer int1 = 2;  
+     Integer int2 = 1;
+     // from int2 to int1 = 1(always) since int1 > int2
+     int count =  int1.compareTo(int2); 
+     System.out.println(count);
+     if(count == 1)
+       System.out.println(int2 + " then " + int1);
+     else if (count == -1)
+       System.out.println(int1 + " then " + int2);
+     else
+       System.out.println(int1 + "equal" + int2);
+  
     }
 }
