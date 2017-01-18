@@ -1272,6 +1272,8 @@ else
 
 ### Sorting in Collection ###
 
+comparable & comparator is generally used in collection
+
 Sort by `comparable interface`
 
 ```java
