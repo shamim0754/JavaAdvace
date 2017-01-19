@@ -1094,7 +1094,28 @@ String class and Wrapper classes implements Comparable interface by default.
 
 ![Image of Nested](images/ascii.png)
 
-1. String class : Java String classes overide compareTo method such a way that return difference of first mismatch character ascii value.it either 0,>0,< 0
+1. String class : Java String classes overide compareTo method such a way that return difference of first mismatch character ascii value.it either 0,>0,< 0 .String Object `compareTo` method override by java api programmer
+
+    ```java
+    public int compareTo(String anotherString) {
+        int len1 = value.length;
+        int len2 = anotherString.value.length;
+        int lim = Math.min(len1, len2);
+        char v1[] = value;
+        char v2[] = anotherString.value;
+
+        int k = 0;
+        while (k < lim) {
+            char c1 = v1[k];
+            char c2 = v2[k];
+            if (c1 != c2) {
+                return c1 - c2;
+            }
+            k++;
+        }
+        return len1 - len2;
+    }
+    ```
 
     ```java
     String s1 = "shamim";  
@@ -1136,8 +1157,20 @@ String s1 = "alamin".toLowerCase();
 String s2 = "Shamim".toLowerCase(); 
 ```
 
-2. Wrapper classes : Java Wrapper classes overide compareTo method such a way that return either 0, 1 or -1
+2. Wrapper classes : Java Wrapper classes overide compareTo method such a way that return either 0, 1 or -1.
+Integer Object `compareTo` method override by java api programmer
 
+   ```java
+   
+    public int compareTo(Integer anotherInteger) {
+
+        return compare(this.value, anotherInteger.value);
+    }
+    public static int compare(int x, int y) {
+        return (x < y) ? -1 : ((x == y) ? 0 : 1);
+    }
+
+   ```
 
    ```java
    Integer int1 = 1;  
@@ -1350,8 +1383,8 @@ public boolean equals(Object obj) {
 }
 ```
 
-User-define class (Student) equals override by own for current equal logic
-we can get help of Integer overide that is done by java api programmer
+User-define class (Student) equals override by own for correct equal logic.
+we can get help of Integer override that is done by java api programmer
 
 Update Student.java
 
