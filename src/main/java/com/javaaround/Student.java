@@ -27,5 +27,10 @@ class Student implements Comparable<Student>{
 	        	&& this.age == student.age;
 	    }
 	    return false;
-	} 
+	}
+	@Override
+	public int hashCode()
+	{
+		return age;
+	}
 }  

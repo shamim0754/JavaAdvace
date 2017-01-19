@@ -1464,4 +1464,39 @@ When you need to lookup an object again hash code of this key is calculated if h
 Note : we saw , Hash structure is internally call `equals()` method. so it is necessary to override `equals()` when you override `HashCode()`. So it is suggested to override both methods into your define class
 
 
+### Problem without eqauls & hashCode ###
+
+if you hashCode() & equals() method in your own classes are not override then Java Collections API(HashSet,HashMap,HashTable) are not to work correctly.
+
+```java
+ Student s1 = new Student(101,"shamim",23);  
+ Student s2 = new Student(101,"alamin",23); 
+ HashSet<Student> hs = new HashSet<Student>();
+ hs.add(s1);
+ hs.add(s2);
+ System.out.println("contains : "+hs.contains(new Student(101,"shamim",23))); 
+```
+We pass same object but it is not exists;
+
+update Student.java
+
+```java
+@Override
+  public boolean equals(Object obj) {
+      if (obj instanceof Student) {
+        Student student = (Student) obj;
+          return this.rollno == student.rollno
+            && this.age == student.age;
+      }
+      return false;
+  }
+  @Override
+  public int hashCode(){
+    return age;
+  }
+```
+
+Run again
+
+Now it show it is exists;
 
