@@ -1161,7 +1161,7 @@ String s2 = "Shamim".toLowerCase();
 Integer Object `compareTo` method override by java api programmer
 
    ```java
-   
+
     public int compareTo(Integer anotherInteger) {
 
         return compare(this.value, anotherInteger.value);
@@ -1426,7 +1426,7 @@ System.out.println("s1 & s2 equal : " + s1.equals(s2));
 
 ###  hashCode() ###
 
-The `java.lang.Object.hashCode()` method returns a hash code value for the object. This method override is necessary  when using hash based collection like `java.util.Hashtable`,`java.util.HashMap`,`java.util.HashSet`
+The `java.lang.Object.hashCode()` method returns a hash code value for the object. This method override is necessary  when using hash based collection(key-value pair) like `java.util.Hashtable`,`java.util.HashMap`,`java.util.HashSet`
 
 String Object `hashCode` method override by java api programmer
 
@@ -1454,4 +1454,14 @@ public static int hashCode(int value) {
     return value;
 }
 ```
+
+### How Hashing  works ###
+
+When inserting an object into a hash based structure like `hashtable,HashMap,HashSet` we use key-value pair.First The hash code of this key is calculated(by hashing algorithm).if hash code(bracket,pointing area at structure) found in the strucutre then it replace existing object otherwise it store as a new element
+
+When you need to lookup an object again hash code of this key is calculated if hash code(bracket,pointing area at structure) found in the strucutre then it calls `equals` method of object .if equals then it contains search element
+
+Note : we saw , Hash structure is internally call `equals()` method. so it is necessary to override `equals()` when you override `HashCode()`. So it is suggested to override both methods into your define class
+
+
 
