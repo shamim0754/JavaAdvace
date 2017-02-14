@@ -1,5 +1,7 @@
 package com.javaaround;
 import java.util.*;  
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 /**
  * Hello world!
  *
@@ -7,12 +9,7 @@ import java.util.*;
 public class App 
 {
     public static void main(String args[]){  
-      
-     Student s1 = new Student(101,"shamim",23);  
-     Student s2 = new Student(101,"alamin",23); 
-     HashSet<Student> hs = new HashSet<Student>();
-     hs.add(s1);
-     hs.add(s2);
-     System.out.println("contains : "+hs.contains(new Student(101,"shamim",23))); 
-    }
+        LocalDateTime localDate = LocalDateTime.parse("2016-08-16"+" 12:10:56",DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+        System.out.println(localDate);
+    }    
 }

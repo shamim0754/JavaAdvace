@@ -776,6 +776,12 @@ The @Documented Marks the annotation for inclusion in the documentation
 
 
 ### Enum ###
+```java
+class Employee{
+  public String gender;
+}
+```
+Since gender is string field then user can enter any kind of string like "Malee","Fimadd" etc.To prevent any kind of string entry enum is used because enum allow only certain value(MALE,FEMALE).So
 Enum  is a special data type that contains fixed set of constants. it was introduced in JDK 1.5 . Enum is a very useful and well known feature
 
 
